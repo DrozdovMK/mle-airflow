@@ -1,7 +1,6 @@
 # alternative version of dag airflow,
 # all etl functions are defined in plugins
 
-
 def create_table(**kwargs):
     from airflow.providers.postgres.hooks.postgres import PostgresHook
     from sqlalchemy import inspect, MetaData, Table, Column, String, Integer, Float, DateTime, UniqueConstraint 
@@ -40,7 +39,7 @@ def create_table(**kwargs):
 
 def extract(**kwargs):
     from airflow.providers.postgres.hooks.postgres import PostgresHook
-    import pandas as pd
+    import pandas as pd 
     ti = kwargs['ti']
     hook = PostgresHook('source_db')
     conn = hook.get_conn()
